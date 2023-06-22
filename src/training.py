@@ -122,6 +122,9 @@ def train_model(
     log_path = "logs/"
     run_name = f"{algorithm_class.__name__}-{gamma}-{learning_rate}-{normalize_env}-{activation_fn.__name__}-{net_arch}"
 
+    # Logging
+    print(f"\nStarting run {run_name}...")
+
     # Callback to perform and save intermittent evaluation steps and checkpoint the best
     # model based on the average reward
     eval_callback = EvalCallback(
